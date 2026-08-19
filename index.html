@@ -1,1 +1,184 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HiperBoy Store - GBA ROMs Descargas Gratis</title>
+    <style>
+        body {
+            background-color: #f0f0f0;
+            color: #111;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 15px;
+        }
 
+        header {
+            background: #2b3e50;
+            color: white;
+            padding: 15px;
+            text-align: center;
+            border-bottom: 4px solid #1a252f;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 1.8rem;
+        }
+
+        header p {
+            margin: 5px 0 0;
+            font-size: 0.85rem;
+            color: #bbb;
+        }
+
+        .buscador-box {
+            margin: 20px auto;
+            text-align: center;
+            max-width: 600px;
+        }
+
+        #buscador {
+            width: 100%;
+            padding: 8px;
+            border: 1px solid #999;
+            font-size: 1rem;
+        }
+
+        .contenedor {
+            max-width: 800px;
+            margin: 0 auto;
+            background: white;
+            border: 1px solid #ccc;
+            padding: 15px;
+        }
+
+        .juego-item {
+            display: flex;
+            align-items: center;
+            border-bottom: 1px dashed #ddd;
+            padding: 10px 0;
+        }
+
+        .juego-item:last-child {
+            border-bottom: none;
+        }
+
+        .juego-item img {
+            width: 60px;
+            height: 60px;
+            object-fit: cover;
+            border: 1px solid #ccc;
+            margin-right: 15px;
+            background: #eee;
+        }
+
+        .juego-info {
+            flex-grow: 1;
+        }
+
+        .juego-info h3 {
+            margin: 0 0 5px;
+            font-size: 1rem;
+            color: #004285;
+        }
+
+        .btn-descargar {
+            background: #d9534f;
+            color: white;
+            padding: 6px 12px;
+            text-decoration: none;
+            font-size: 0.85rem;
+            font-weight: bold;
+            border-radius: 3px;
+        }
+
+        .btn-descargar:hover {
+            background: #c9302c;
+        }
+
+        .msg {
+            text-align: center;
+            color: #666;
+            padding: 20px;
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 30px;
+            font-size: 0.75rem;
+            color: #777;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>HiperBoy Store</h1>
+        <p>El rinconcito de las ROMs de GBA - Descargas directas y sin anuncios molestos</p>
+    </header>
+
+    <div class="buscador-box">
+        <input type="text" id="buscador" placeholder="Buscar juego por nombre...">
+    </div>
+
+    <div class="contenedor">
+        <div id="lista-juegos">
+            <div class="msg">Cargando catálogo...</div>
+        </div>
+    </div>
+
+    <footer>
+        <p>HiperBoy Store no aloja ROMs piratas en sus servidores (guiño, guiño). Todo bajo su propio riesgo.</p>
+    </footer>
+
+    <script>
+        const urlJuegos = 'https://raw.githubusercontent.com/loslocos817yt-star/HiperBoy-Store-/refs/heads/main/JuegosData/Juegos.json';
+        let todosLosJuegos = [];
+
+        async function cargarJuegos() {
+            try {
+                const respuesta = await fetch(urlJuegos);
+                todosLosJuegos = await respuesta.json();
+                mostrarJuegos(todosLosJuegos);
+            } catch (error) {
+                console.error("Error:", error);
+                document.getElementById('lista-juegos').innerHTML = '<div class="msg">Error al conectar con la base de datos.</div>';
+            }
+        }
+
+        function mostrarJuegos(juegos) {
+            const contenedor = document.getElementById('lista-juegos');
+            contenedor.innerHTML = '';
+
+            if (juegos.length === 0) {
+                contenedor.innerHTML = '<div class="msg">No se encontró ningun juego con ese nombre.</div>';
+                return;
+            }
+
+            juegos.forEach(juego => {
+                const item = document.createElement('div');
+                item.className = 'juego-item';
+                item.innerHTML = `
+                    <img src="${juego.portada}" alt="${juego.titulo}">
+                    <div class="juego-info">
+                        <h3>${juego.titulo}</h3>
+                        <span style="font-size: 0.75rem; color: #555;">Plataforma: Game Boy Advance (GBA)</span>
+                    </div>
+                    <a href="${juego.romUrl}" class="btn-descargar" download>DESCARGAR ROM</a>
+                `;
+                contenedor.appendChild(item);
+            });
+        }
+
+        document.getElementById('buscador').addEventListener('input', (e) => {
+            const texto = e.target.value.toLowerCase();
+            const filtrados = todosLosJuegos.filter(j => j.titulo.toLowerCase().includes(texto));
+            mostrarJuegos(filtrados);
+        });
+
+        cargarJuegos();
+    </script>
+
+</body>
+</html>
