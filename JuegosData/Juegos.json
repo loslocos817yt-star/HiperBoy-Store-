@@ -1,1 +1,7 @@
-[]
+[
+  {
+    "titulo": "Ice Climber",
+    "portada": "https://raw.githubusercontent.com/loslocos817yt-star/HiperBoy-Store-/refs/heads/main/JuegosData/Download/portada/Classic%2BNES%2BSeries%2B-%2BIce%2BClimber%2B(USA%2C%2BEurope)-image.jpg",
+    "romUrl": "link_a_archivo.gba"
+  }
+]
