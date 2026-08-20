@@ -28,6 +28,11 @@
     "titulo": "The Mummy",
     "portada": "https://raw.githubusercontent.com/loslocos817yt-star/HiperBoy-Store-/refs/heads/main/JuegosData/Download/portada/Mummy%2C%2BThe%2B(Europe)%2B(En%2CFr%2CDe%2CEs%2CIt)-image.jpg",
     "romUrl": "https://github.com/loslocos817yt-star/HiperBoy-Store-/raw/refs/heads/main/JuegosData/Download/Mummy,%20The%20(Europe)%20(En,Fr,De,Es,It).gba"
+  },
+  {
+    "titulo": "Pokémon - Edición Rojo Fuego",
+    "portada": "https://raw.githubusercontent.com/loslocos817yt-star/HiperBoy-Store-/refs/heads/main/JuegosData/Download/portada/Pokemon%2B-%2BEdicion%2BRojo%2BFuego%2B(Spain)-image.jpg",
+    "romUrl": "https://github.com/loslocos817yt-star/HiperBoy-Store-/raw/refs/heads/main/JuegosData/Download/Pokemon%20-%20Edicion%20Rojo%20Fuego%20(Spain).gba"
   }
 ]
 
