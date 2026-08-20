@@ -8,5 +8,10 @@
     "titulo": "Star Wars : Flight of the Falcon",
     "portada": "https://raw.githubusercontent.com/loslocos817yt-star/HiperBoy-Store-/refs/heads/main/JuegosData/Download/portada/Star%2BWars%2B-%2BFlight%2Bof%2Bthe%2BFalcon%2B(USA)-image.jpg",
     "romUrl": "https://github.com/loslocos817yt-star/HiperBoy-Store-/raw/refs/heads/main/JuegosData/Download/Star%20Wars%20-%20Flight%20of%20the%20Falcon%20(USA).gba"
+  },
+  {
+    "titulo": "Dragon Ball Z: Taiketsu",
+    "portada": "https://raw.githubusercontent.com/loslocos817yt-star/HiperBoy-Store-/refs/heads/main/JuegosData/Download/portada/Dragon%2BBall%2BZ%2B-%2BTaiketsu%2B(Europe)%2B(En%2CFr%2CDe%2CEs%2CIt)-image.jpg",
+    "romUrl": "https://github.com/loslocos817yt-star/HiperBoy-Store-/raw/refs/heads/main/JuegosData/Download/Dragon%20Ball%20Z%20-%20Taiketsu%20(Europe)%20(En,Fr,De,Es,It).gba"
   }
 ]
