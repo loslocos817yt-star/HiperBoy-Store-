@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -43,6 +44,24 @@
             padding: 8px;
             border: 1px solid #999;
             font-size: 1rem;
+            box-sizing: border-box;
+        }
+
+        .btn-suscribir {
+            display: inline-block;
+            margin-top: 15px;
+            padding: 10px 20px;
+            background-color: #ff0000;
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            border-radius: 5px;
+            font-size: 0.9rem;
+            transition: background 0.2s;
+        }
+
+        .btn-suscribir:hover {
+            background-color: #cc0000;
         }
 
         .contenedor {
@@ -137,6 +156,11 @@
 
     <div class="buscador-box">
         <input type="text" id="buscador" placeholder="Buscar juego por nombre...">
+        <div>
+            <a href="https://youtube.com/@insanodecartonmc?si=BF4aoO8O_Bmsm1Dv" target="_blank" class="btn-suscribir">
+                Subscríbete al creador de la HiperBoy Store
+            </a>
+        </div>
     </div>
 
     <!-- SECCIÓN DE EMULADORES -->
