@@ -38,6 +38,11 @@
     "titulo": "Pokémon - Edición Verde Hoja",
     "portada": "https://www.centropkmn.com/images/pokemonbox/pokemon_verdehoja.jpg",
     "romUrl": "https://downloads.romspedia.com/roms/Pokemon%20Verde%20Hoja%20(S)(Rising%20Sun).zip"
-  }
+  },
+   {
+    "titulo": "Pokémon - Edición Esmeralda",
+    "portada": "https://www.centropkmn.com/images/pokemonbox/esmeralda.jpg",
+    "romUrl": "https://downloads.romspedia.com/roms/1986%20-%20Pokemon%20Emerald%20(U)(TrashMan).zip"
+   }
 ]
 
