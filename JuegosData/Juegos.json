@@ -33,6 +33,11 @@
     "titulo": "Pokémon - Edición Rojo Fuego",
     "portada": "https://raw.githubusercontent.com/loslocos817yt-star/HiperBoy-Store-/refs/heads/main/JuegosData/Download/portada/Pokemon%2B-%2BEdicion%2BRojo%2BFuego%2B(Spain)-image.jpg",
     "romUrl": "https://github.com/loslocos817yt-star/HiperBoy-Store-/raw/refs/heads/main/JuegosData/Download/Pokemon%20-%20Edicion%20Rojo%20Fuego%20(Spain).gba"
+  },
+  {
+    "titulo": "Pokémon - Edición Verde Hoja",
+    "portada": "https://www.centropkmn.com/images/pokemonbox/pokemon_verdehoja.jpg",
+    "romUrl": "https://downloads.romspedia.com/roms/Pokemon%20Verde%20Hoja%20(S)(Rising%20Sun).zip"
   }
 ]
 
