@@ -18,6 +18,16 @@
     "titulo": "Bruce Lee: Return of the Legend",
     "portada": "https://raw.githubusercontent.com/loslocos817yt-star/HiperBoy-Store-/refs/heads/main/JuegosData/Download/portada/Bruce%2BLee%2B-%2BReturn%2Bof%2Bthe%2BLegend%2B(USA)-image.jpg",
     "romUrl": "https://github.com/loslocos817yt-star/HiperBoy-Store-/raw/refs/heads/main/JuegosData/Download/Bruce%20Lee%20-%20Return%20of%20the%20Legend%20(USA).gba"
+  },
+  {
+    "titulo": "Pac-Man World",
+    "portada": "https://raw.githubusercontent.com/loslocos817yt-star/HiperBoy-Store-/refs/heads/main/JuegosData/Download/portada/Pac-Man%2BWorld%2B(Europe)%2B(En%2CFr%2CDe%2CEs%2CIt)-image.jpg",
+    "romUrl": "https://github.com/loslocos817yt-star/HiperBoy-Store-/raw/refs/heads/main/JuegosData/Download/Pac-Man%20World%20(Europe)%20(En,Fr,De,Es,It).gba"
+  },
+  {
+    "titulo": "The Mummy",
+    "portada": "https://raw.githubusercontent.com/loslocos817yt-star/HiperBoy-Store-/refs/heads/main/JuegosData/Download/portada/Mummy%2C%2BThe%2B(Europe)%2B(En%2CFr%2CDe%2CEs%2CIt)-image.jpg",
+    "romUrl": "https://github.com/loslocos817yt-star/HiperBoy-Store-/raw/refs/heads/main/JuegosData/Download/Mummy,%20The%20(Europe)%20(En,Fr,De,Es,It).gba"
   }
 ]
 
