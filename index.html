@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -45,23 +44,6 @@
             border: 1px solid #999;
             font-size: 1rem;
             box-sizing: border-box;
-        }
-
-        .btn-suscribir {
-            display: inline-block;
-            margin-top: 15px;
-            padding: 10px 20px;
-            background-color: #ff0000;
-            color: white;
-            text-decoration: none;
-            font-weight: bold;
-            border-radius: 5px;
-            font-size: 0.9rem;
-            transition: background 0.2s;
-        }
-
-        .btn-suscribir:hover {
-            background-color: #cc0000;
         }
 
         .contenedor {
@@ -145,6 +127,18 @@
             font-size: 0.75rem;
             color: #777;
         }
+
+        /* Estilo para el botón re escondido en el footer */
+        .btn-escondido {
+            color: #ccc;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .btn-escondido:hover {
+            color: #333;
+            text-decoration: underline;
+        }
     </style>
 </head>
 <body>
@@ -156,11 +150,6 @@
 
     <div class="buscador-box">
         <input type="text" id="buscador" placeholder="Buscar juego por nombre...">
-        <div>
-            <a href="https://youtube.com/@insanodecartonmc?si=BF4aoO8O_Bmsm1Dv" target="_blank" class="btn-suscribir">
-                Subscríbete al creador de la HiperBoy Store
-            </a>
-        </div>
     </div>
 
     <!-- SECCIÓN DE EMULADORES -->
@@ -187,6 +176,12 @@
 
     <footer>
         <p>HiperBoy Store no aloja ROMs piratas en sus servidores (guiño, guiño). Todo bajo su propio riesgo.</p>
+        <!-- Aquí quedó camuflado el link del creador -->
+        <p style="margin-top: 8px;">
+            <a href="https://youtube.com/@insanodecartonmc?si=BF4aoO8O_Bmsm1Dv" target="_blank" class="btn-escondido">
+                .
+            </a>
+        </p>
     </footer>
 
     <script>
