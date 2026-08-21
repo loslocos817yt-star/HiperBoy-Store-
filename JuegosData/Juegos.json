@@ -43,6 +43,22 @@
     "titulo": "Pokémon - Edición Esmeralda",
     "portada": "https://www.centropkmn.com/images/pokemonbox/esmeralda.jpg",
     "romUrl": "https://downloads.romspedia.com/roms/1986%20-%20Pokemon%20Emerald%20(U)(TrashMan).zip"
-   }
+   },
+      {
+        "titulo": "The Legend of Zelda: The Minish Cap",
+        "portada": "https://visualboyadvance.org/wp-content/uploads/2022/10/the-legend-of-zelda-the-minish-cap-game-boy-advance-front-cover.jpg",
+        "romUrl": "https://github.com/vbaemulator/GBA-Roms/raw/main/Legend%20of%20Zelda%2C%20The%20-%20The%20Minish%20Cap%20(USA).zip"
+    },
+    {
+        "titulo": "The Legend of Zelda: A Link to the Past & Four Swords",
+        "portada": "https://visualboyadvance.org/wp-content/uploads/2022/10/the-legend-of-zelda-a-link-to-the-past-four-swords-game-boy-advance-front-cover.jpg",
+        "romUrl": "https://github.com/vbaemulator/GBA-Roms/raw/main/Legend%20of%20Zelda%2C%20The%20-%20A%20Link%20to%20the%20Past%20%26%20Four%20Swords%20(USA).zip"
+    },
+    {
+        "titulo": "Pokémon Pinball",
+        "portada": "https://visualboyadvance.org/wp-content/uploads/2023/06/Pokemon-Pinball.jpg",
+        "romUrl": "https://github.com/vbaemulator/GBC-Roms/raw/main/Pokemon%20Pinball%20(USA%2C%20Australia)%20(Rumble%20Version)%20(SGB%20Enhanced)%20(GB%20Compatible).zip"
+    }
+  
 ]
 
