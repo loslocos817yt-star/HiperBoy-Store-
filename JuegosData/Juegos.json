@@ -58,7 +58,23 @@
         "titulo": "Pokémon Pinball",
         "portada": "https://visualboyadvance.org/wp-content/uploads/2023/06/Pokemon-Pinball.jpg",
         "romUrl": "https://github.com/vbaemulator/GBC-Roms/raw/main/Pokemon%20Pinball%20(USA%2C%20Australia)%20(Rumble%20Version)%20(SGB%20Enhanced)%20(GB%20Compatible).zip"
+    },
+        {
+        "titulo": "Pokémon - Edición Rubí",
+        "portada": "https://visualboyadvance.org/wp-content/uploads/2022/11/pokemon-ruby-version-game-boy-advance-front-cover.jpg",
+        "romUrl": "https://github.com/vbaemulator/GBA-Roms/raw/main/Pokemon%20-%20Ruby%20Version%20(USA%2C%20Europe)%20(Rev%202).zip"
+    },
+    {
+        "titulo": "Pokémon - Edición Zafiro",
+        "portada": "https://visualboyadvance.org/wp-content/uploads/2022/11/pokemon-sapphire-version-game-boy-advance-front-cover.jpg",
+        "romUrl": "https://github.com/vbaemulator/GBA-Roms/raw/main/Pokemon%20-%20Sapphire%20Version%20(USA%2C%20Europe)%20(Rev%202).zip"
+    },
+    {
+        "titulo": "Pokémon Mundo Misterioso: Equipo de Rescate Rojo",
+        "portada": "https://visualboyadvance.org/wp-content/uploads/2022/11/pokemon-mystery-dungeon-red-rescue-team-game-boy-advance-front-cover.jpg",
+        "romUrl": "https://github.com/vbaemulator/GBA-Roms/raw/main/Pokemon%20Mystery%20Dungeon%20-%20Red%20Rescue%20Team%20(USA%2C%20Australia).zip"
     }
+  
   
 ]
 
