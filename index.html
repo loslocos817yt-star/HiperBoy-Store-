@@ -19,6 +19,8 @@
             padding: 15px;
             text-align: center;
             border-bottom: 4px solid #1a252f;
+            border-radius: 5px 5px 0 0;
+            margin-bottom: 20px;
         }
 
         header h1 {
@@ -33,25 +35,29 @@
         }
 
         .buscador-box {
-            margin: 20px auto;
+            margin: 0 auto 20px auto;
             text-align: center;
             max-width: 600px;
         }
 
         #buscador {
             width: 100%;
-            padding: 8px;
-            border: 1px solid #999;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
             font-size: 1rem;
             box-sizing: border-box;
+            box-shadow: inset 0 1px 3px rgba(0,0,0,0.1);
         }
 
         .contenedor {
             max-width: 800px;
             margin: 0 auto 20px auto;
             background: white;
-            border: 1px solid #ccc;
+            border: 1px solid #ddd;
+            border-radius: 5px;
             padding: 15px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
         }
 
         .seccion-titulo {
@@ -63,11 +69,19 @@
             margin-top: 0;
         }
 
+        /* ESTILOS DE LA LISTA PRINCIPAL */
         .juego-item {
             display: flex;
             align-items: center;
             border-bottom: 1px dashed #ddd;
-            padding: 10px 0;
+            padding: 10px;
+            cursor: pointer;
+            transition: background 0.2s;
+            border-radius: 5px;
+        }
+
+        .juego-item:hover {
+            background: #f9f9f9;
         }
 
         .juego-item:last-child {
@@ -80,7 +94,7 @@
             object-fit: cover;
             border: 1px solid #ccc;
             margin-right: 15px;
-            background: #eee;
+            border-radius: 3px;
         }
 
         .juego-info {
@@ -89,30 +103,115 @@
 
         .juego-info h3 {
             margin: 0 0 5px;
-            font-size: 1rem;
+            font-size: 1.1rem;
             color: #004285;
+            text-decoration: underline; /* Para que parezca botón/link */
         }
 
+        /* ESTILOS DE LA VISTA DE DETALLE */
+        #vista-detalle {
+            display: none; /* Oculto por defecto */
+            text-align: center;
+        }
+
+        .btn-volver {
+            display: inline-block;
+            background: #555;
+            color: white;
+            padding: 5px 15px;
+            text-decoration: none;
+            border-radius: 3px;
+            font-size: 0.9rem;
+            margin-bottom: 15px;
+            cursor: pointer;
+            float: left;
+        }
+
+        .btn-volver:hover {
+            background: #333;
+        }
+
+        .detalle-portada {
+            width: 100%;
+            max-width: 250px;
+            border: 2px solid #ccc;
+            border-radius: 5px;
+            margin: 15px auto;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+
+        .detalle-titulo {
+            font-size: 1.5rem;
+            color: #2b3e50;
+            margin: 10px 0;
+        }
+
+        /* BOTONES DE DESCARGA */
         .btn-descargar {
+            display: inline-block;
             background: #d9534f;
             color: white;
-            padding: 6px 12px;
+            padding: 10px 20px;
             text-decoration: none;
-            font-size: 0.85rem;
+            font-size: 1rem;
             font-weight: bold;
-            border-radius: 3px;
+            border-radius: 5px;
+            margin: 10px 0;
+            transition: transform 0.1s, background 0.2s;
         }
 
         .btn-descargar:hover {
             background: #c9302c;
+            transform: scale(1.05);
         }
 
         .btn-apk {
             background: #28a745;
+            padding: 6px 12px;
+            font-size: 0.85rem;
+            float: right;
+            transform: none;
         }
 
         .btn-apk:hover {
             background: #218838;
+            transform: none;
+        }
+
+        /* GRID PARA "MÁS JUEGOS" */
+        .mas-juegos-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .mas-juegos-item {
+            cursor: pointer;
+            text-align: center;
+            border: 1px solid #eee;
+            padding: 10px;
+            border-radius: 5px;
+            transition: background 0.2s;
+        }
+
+        .mas-juegos-item:hover {
+            background: #f9f9f9;
+        }
+
+        .mas-juegos-item img {
+            width: 100%;
+            height: 120px;
+            object-fit: cover;
+            border: 1px solid #ccc;
+            border-radius: 3px;
+        }
+
+        .mas-juegos-item p {
+            margin: 5px 0 0;
+            font-size: 0.8rem;
+            color: #004285;
+            font-weight: bold;
         }
 
         .msg {
@@ -128,16 +227,12 @@
             color: #777;
         }
 
-        /* Estilo para el botón re escondido en el footer */
+        /* Easter egg invisible camuflado con el fondo */
         .btn-escondido {
-            color: #ccc;
+            color: #f0f0f0; /* Mismo color del fondo */
+            font-size: 0.01rem;
             text-decoration: none;
-            transition: color 0.3s;
-        }
-
-        .btn-escondido:hover {
-            color: #333;
-            text-decoration: underline;
+            cursor: default;
         }
     </style>
 </head>
@@ -148,36 +243,56 @@
         <p>El rinconcito de las ROMs de GBA - Descargas directas y sin anuncios molestos</p>
     </header>
 
-    <div class="buscador-box">
-        <input type="text" id="buscador" placeholder="Buscar juego por nombre...">
-    </div>
+    <!-- VISTA PRINCIPAL (LISTA) -->
+    <div id="vista-principal">
+        <div class="buscador-box">
+            <input type="text" id="buscador" placeholder="Buscar juego por nombre...">
+        </div>
 
-    <!-- SECCIÓN DE EMULADORES -->
-    <div class="contenedor">
-        <h2 class="seccion-titulo">📱 Emuladores Recomendados</h2>
-        <div class="juego-item">
-            <img src="https://raw.githubusercontent.com/loslocos817yt-star/HiperBoy-Store-/refs/heads/main/JuegosData/Download/portada/images.jpeg" alt="My Boy Pro">
-            <div class="juego-info">
-                <h3>My Boy! GBA Emulator PRO</h3>
-                <span style="font-size: 0.75rem; color: #555;">Versión Completa (APK Android)</span>
+        <!-- SECCIÓN DE EMULADORES -->
+        <div class="contenedor">
+            <h2 class="seccion-titulo">📱 Emuladores Recomendados</h2>
+            <div class="juego-item" style="cursor: default;">
+                <img src="https://raw.githubusercontent.com/loslocos817yt-star/HiperBoy-Store-/refs/heads/main/JuegosData/Download/portada/images.jpeg" alt="My Boy Pro">
+                <div class="juego-info">
+                    <h3 style="text-decoration: none; color: #111;">My Boy! GBA Emulator PRO</h3>
+                    <span style="font-size: 0.75rem; color: #555;">Versión Completa (APK Android)</span>
+                </div>
+                <a href="https://github.com/loslocos817yt-star/HiperBoy-Store-/raw/refs/heads/main/JuegosData/Download/My-Boy-2.0.6-APK-Apktodo.apk" class="btn-descargar btn-apk" download>BAJAR APK</a>
             </div>
-            
-            <a href="https://github.com/loslocos817yt-star/HiperBoy-Store-/raw/refs/heads/main/JuegosData/Download/My-Boy-2.0.6-APK-Apktodo.apk" class="btn-descargar btn-apk" download>BAJAR APK</a>
+        </div>
+
+        <!-- SECCIÓN DE JUEGOS -->
+        <div class="contenedor">
+            <h2 class="seccion-titulo">🎮 Catálogo de ROMs</h2>
+            <div id="lista-juegos">
+                <div class="msg">Cargando catálogo...</div>
+            </div>
         </div>
     </div>
 
-    <!-- SECCIÓN DE JUEGOS -->
-    <div class="contenedor">
-        <h2 class="seccion-titulo">🎮 Catálogo de ROMs</h2>
-        <div id="lista-juegos">
-            <div class="msg">Cargando catálogo...</div>
+    <!-- VISTA DE DETALLE (JUEGO INDIVIDUAL) -->
+    <div id="vista-detalle" class="contenedor">
+        <div style="overflow: hidden;">
+            <div class="btn-volver" onclick="cerrarDetalle()">← Volver al catálogo</div>
+        </div>
+        
+        <h2 id="detalle-titulo" class="detalle-titulo">Nombre del Juego</h2>
+        <img id="detalle-portada" class="detalle-portada" src="" alt="Portada">
+        <br>
+        <a id="detalle-descarga" href="" class="btn-descargar" download>DESCARGAR ROM</a>
+
+        <div style="margin-top: 30px; text-align: left;">
+            <h3 class="seccion-titulo">🔥 Más juegos que te pueden interesar</h3>
+            <div id="mas-juegos" class="mas-juegos-grid">
+                <!-- Aquí se inyectan otros juegos -->
+            </div>
         </div>
     </div>
 
     <footer>
         <p>HiperBoy Store no aloja ROMs piratas en sus servidores (guiño, guiño). Todo bajo su propio riesgo.</p>
-        
-        <p style="margin-top: 8px;">
+        <p style="margin-top: 5px;">
             <a href="https://youtube.com/@insanodecartonmc?si=BF4aoO8O_Bmsm1Dv" target="_blank" class="btn-escondido">
                 .
             </a>
@@ -190,7 +305,8 @@
 
         async function cargarJuegos() {
             try {
-                const respuesta = await fetch(urlJuegos);
+                // Le agregamos un número aleatorio al final de la URL para evitar que la caché de GitHub rompa las actualizaciones
+                const respuesta = await fetch(urlJuegos + '?t=' + new Date().getTime());
                 todosLosJuegos = await respuesta.json();
                 mostrarJuegos(todosLosJuegos);
             } catch (error) {
@@ -199,6 +315,7 @@
             }
         }
 
+        // Muestra la lista principal
         function mostrarJuegos(juegos) {
             const contenedor = document.getElementById('lista-juegos');
             contenedor.innerHTML = '';
@@ -208,26 +325,87 @@
                 return;
             }
 
-            juegos.forEach(juego => {
+            juegos.forEach((juego, index) => {
+                // Al dar clic en cualquier parte del item, abre el detalle usando su índice original
+                const indiceOriginal = todosLosJuegos.indexOf(juego);
                 const item = document.createElement('div');
                 item.className = 'juego-item';
+                item.onclick = () => abrirDetalle(indiceOriginal);
+                
                 item.innerHTML = `
                     <img src="${juego.portada}" alt="${juego.titulo}">
                     <div class="juego-info">
                         <h3>${juego.titulo}</h3>
+                        <span style="font-size: 0.8rem; color: #777;">Toca para ver detalles</span>
                     </div>
-                    <a href="${juego.romUrl}" class="btn-descargar" download>DESCARGAR ROM</a>
                 `;
                 contenedor.appendChild(item);
             });
         }
 
+        // Abre el menú individual del juego
+        function abrirDetalle(indice) {
+            const juego = todosLosJuegos[indice];
+            
+            // Ocultar la lista, mostrar el detalle
+            document.getElementById('vista-principal').style.display = 'none';
+            document.getElementById('vista-detalle').style.display = 'block';
+
+            // Llenar los datos del juego grande
+            document.getElementById('detalle-titulo').innerText = juego.titulo;
+            document.getElementById('detalle-portada').src = juego.portada;
+            document.getElementById('detalle-descarga').href = juego.romUrl;
+
+            // Generar "Más juegos" (agarrando 4 al azar que no sean el actual)
+            generarMasJuegos(indice);
+            
+            // Subir la pantalla hasta arriba
+            window.scrollTo(0, 0);
+        }
+
+        // Regresar a la lista
+        function cerrarDetalle() {
+            document.getElementById('vista-detalle').style.display = 'none';
+            document.getElementById('vista-principal').style.display = 'block';
+            window.scrollTo(0, 0);
+        }
+
+        // Genera la sección de abajo de recomendaciones
+        function generarMasJuegos(indiceActual) {
+            const contenedorRecomendados = document.getElementById('mas-juegos');
+            contenedorRecomendados.innerHTML = '';
+
+            // Filtramos para quitar el juego que estamos viendo
+            let otrosJuegos = todosLosJuegos.filter((_, idx) => idx !== indiceActual);
+            
+            // Los desordenamos para que siempre salgan recomendaciones distintas
+            otrosJuegos = otrosJuegos.sort(() => 0.5 - Math.random());
+            
+            // Agarramos solo 4
+            const recomendaciones = otrosJuegos.slice(0, 4);
+
+            recomendaciones.forEach(juego => {
+                const indiceOriginal = todosLosJuegos.indexOf(juego);
+                const div = document.createElement('div');
+                div.className = 'mas-juegos-item';
+                div.onclick = () => abrirDetalle(indiceOriginal); // Si le picas, te manda a ese juego
+                
+                div.innerHTML = `
+                    <img src="${juego.portada}" alt="${juego.titulo}">
+                    <p>${juego.titulo}</p>
+                `;
+                contenedorRecomendados.appendChild(div);
+            });
+        }
+
+        // El buscador sigue funcionando igual
         document.getElementById('buscador').addEventListener('input', (e) => {
             const texto = e.target.value.toLowerCase();
             const filtrados = todosLosJuegos.filter(j => j.titulo.toLowerCase().includes(texto));
             mostrarJuegos(filtrados);
         });
 
+        // Iniciar
         cargarJuegos();
     </script>
 
